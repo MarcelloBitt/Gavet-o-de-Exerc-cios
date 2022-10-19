@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <title>Logica de Programação Javascript</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <h1>Lógica de programação com Javascript</h1>
+
+        <div id="output">
+
+           <!--  <label for="notas">
+                Nota 1
+                <input type="number" id="nota1">
+            </label>
+
+            <br>
+
+            <label for="notas">
+                Nota 2
+                <input type="number" id="nota2">
+            </label>
+
+            <br>
+
+            <label for="notas">
+                Nota 3
+                <input type="number" id="nota3">
+            </label>
+
+            <br>
+
+            <label for="notas">
+                Nota 4
+                <input type="number" id="nota4">
+            </label>
+
+            <br>
+
+            <br>
+
+            <button>Calcular média</button>
+
+            <p>A média das notas é: <label for="mediafinal" id="notafinal"></label></p>
+        </div>
+         -->
+        <script> 
+            (function (){
+                function calcularMedia(){
+                    var total = 0;
+                    var qtd = arguments.length;
+                    var x = 0;
+
+                    while(typeof arguments[x] === 'number'){
+                        total += arguments[x];
+                        x++
+                    }
+
+                    return total / qtd;
+                }
+
+                var media1 = calcularMedia(2,3);
+                var media2 = calcularMedia(2,3,10,6);
+
+                console.log('media 1: ' + media1);
+                console.log('meida 2: ' + media2);
+
+            })()
+        </script>
+    </body>
+</html>

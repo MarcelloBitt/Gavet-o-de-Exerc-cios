@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Logica de Programação Javascript</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <h1>Lógica de programação com Javascript</h1>
+
+        <div id="output"></div>
+        
+        <script> 
+
+        let cadastro = [
+            { nome : 'Marcello', email : 'marcello@email.com'},
+            { nome : 'Jacqueline', email : 'jacqueline@email.com'},
+            { nome : 'Angela', email : 'angela@email.com'}
+        ]
+
+        let msg = '';
+
+        for(let i = 0; i < cadastro.length; i++){
+            msg += 'Nome: ' + cadastro[i].nome + '<br>';
+            msg += 'e-mail: ' + cadastro[i].email + '<br> <br>';
+        }
+
+        document.querySelector('#output').innerHTML = msg;
+
+        /* let teste = function (){
+            console.log('deu certo aqui')
+        }
+
+        teste();  testando arrow function que nao da certo kkk
+        */
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <title>Curso Javascript Completo 2018</title>
+    <meta charset="utf-8">
+
+    <h1>Curso Javascript Completo 2018</h1>
+
+    <form action="#">
+        <textarea cols="50" rows="10" readonly>Contrato de Serviços Prestados
+        </textarea> 
+
+        <br>
+
+        <label>
+            <input type="checkbox" id="check" checked> Li e aceito os termos do contrato.
+        </label>
+
+        <br>
+
+        <input type="submit" value="Continuar" id="btn">
+    </form>
+    <script>
+        (function() {
+            'user strict';
+
+            var $btn = document.getElementById('btn');
+            var $checkBox = document.getElementById('check');
+            toggleBtn();
+
+            $checkBox.addEventListener('change', function(e){
+                toggleBtn();
+            });
+
+            function toggleBtn(){
+                $btn.disabled = !$checkBox.checked;
+            }
+            
+        })();
+    </script>
+
+</body>
+</html>

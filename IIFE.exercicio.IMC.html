@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-br">
+    <head>
+        <title>Logica de Programação Javascript</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+    </head>
+    <body>
+        <h1>Cálculo de IMC com base em peso e altura</h1>
+
+        <div>
+
+            <label>Peso</label>
+            <input type="number" id="peso">
+
+            <br>
+            <br>
+
+            <label>Altura</label>
+            <input type="number" id="altura">
+
+            <br>
+            <br>
+
+            <button id="botao">Calcular IMC</button>
+
+            <p>Seu IMC é: <span id="IMC"></span></p>
+            <p>Seu peso entra na classificação de: <span id="risco"></span></p>
+        </div>
+        
+        <script> 
+
+        (function(){
+
+            'use strict'
+
+            document.querySelector('#botao').addEventListener('click', mostraIMC);
+            
+            // pegar peso e altura das labels
+            function calculaIMC(peso, altura){
+                var peso = document.querySelector('#peso').value;
+                peso = parseFloat(peso);
+                var altura = document.querySelector('#altura').value;
+                altura = parseFloat(altura);
+
+                // executar uma função que retorne o valor do IMC (peso/altura*altura)
+                return peso / (altura*altura);
+                
+            }
+            
+            // devolver o IMC no span
+            function mostraIMC(){
+                
+                document.querySelector('#IMC').innerHTML = (calculaIMC());
+                document.querySelector('#risco').innerHTML = (indiceIMC());
+            }
+            
+            // verificar o IMC da pessoa de acordo com tabela
+           function indiceIMC(){
+            if(calculaIMC() >= 16 && calculaIMC() <= 16.9 || calculaIMC() < 16){
+                 var riscoIMC = 'Muito abaixo do peso'
+            } else if(calculaIMC() >= 17 && calculaIMC() <= 18.4 ){
+                var riscoIMC = 'Abaixo do peso'
+            } else if(calculaIMC() >= 18.5 && calculaIMC() <= 24.9 ){
+                var riscoIMC = 'Peso normal'
+            } else if(calculaIMC() >= 25 && calculaIMC() <= 29.9 ){
+                var riscoIMC = 'Acima do peso'
+            } else if(calculaIMC() >= 30 && calculaIMC() <= 34.9 ){
+                var riscoIMC = 'Obesidade Grau I'
+            } else if(calculaIMC() >= 35 && calculaIMC() <= 40 ){
+                var riscoIMC = 'Obesidade Grau II'
+            } else if(calculaIMC() > 40 ){
+                var riscoIMC = 'Obesidade Grau III'
+            } else {
+                var riscoIMC = 'Algo deu errado'
+            }
+
+            return riscoIMC;
+           }
+            
+        })()
+            </script>
+            </body>
+            </html>

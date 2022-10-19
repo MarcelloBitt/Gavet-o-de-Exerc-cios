@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Logica de Programação Javascript</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Lógica de programação com Javascript</h1>
+
+        <button onclick="calcular('+')">+</button> 
+        <button onclick="calcular('-')">-</button> 
+        <button onclick="calcular('*')">*</button> 
+        <button onclick="calcular('/')">/</button>
+
+        <div id="output"></div>
+        
+        <script> 
+            let number = prompt('Insira um número: ');
+            number = parseFloat(number);
+
+            escreve();
+            
+            function escreve(){
+                let output = document.querySelector('#output');
+                output.innerHTML = number;
+            }
+            
+            function calcular(sinal){
+                let n1 = prompt('Insira outro número: ');
+                n1 = parseFloat(n1);
+                    switch(sinal){
+                        case '+':
+                            number += n1
+                            break;
+                        case '-':
+                            number -= n1
+                            break;
+                        case '*':
+                            number *= n1
+                            break;
+                        case '/':
+                            number /= n1   
+                    }
+                escreve();
+            }
+            
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarefas de hoje para Marcello</title>
+    <style>
+
+        li:hover{
+            cursor: pointer;
+            user-select: none;
+        }
+        
+    </style>
+</head>
+<body>
+    <div> 
+        <h1>Tarefas de hoje para Marcello</h1>
+
+        <input type="text" id="txtTask"> 
+        <button id="btn">Cadastrar tarefa</button>
+
+        <ul>
+            <li>estudar Javascript - DOM</li>
+            <li>estudar eventos em Javascript</li>
+            <li>jogar video game</li>
+        </ul>
+        
+        
+    </div>
+        <script>
+            (function() {
+                'user strict';
+
+                var $ul = document.querySelector('ul');
+                var $txtTask = document.getElementById('txtTask');
+                var $btn = document.getElementById('btn');
+                var $lis = $ul.querySelectorAll('li');
+
+                function addTask(){
+                    var li = document.createElement('li');
+                    var text = document.createTextNode($txtTask.value);
+                    li.appendChild(text);
+                    $ul.appendChild(li);
+                    $txtTask.value ='';
+                    $txtTask.focus();              
+                }  
+                
+                function removeTask(li){
+                    if(confirm('Deseja realmente exlcuira tarefa \n '+ li.textContent + '?')){
+                        li.parentNode.removeChild(li);
+                    };
+                }
+                
+                $ul.addEventListener('click', function(e){
+                    if(e.target.nodeName === 'LI'){
+                        removeTask(e.target);
+                    }
+                })
+                
+                $txtTask.addEventListener('keyup', function(e){
+                    if(e.keyCode === 13 && $txtTask.value === ''){
+                        alert('Inisra uma tarefa a ser cadastrada!')
+                    } else if(e.keyCode === 13){
+                        addTask();
+                    }
+                })
+                
+                $btn.addEventListener('click', function(){
+                    if($txtTask.value === ''){
+                        alert('Inisra uma tarefa a ser cadastrada!')
+                    } else {
+                        addTask();
+                    }
+                });
+            
+                
+            
+        })();
+    </script>
+
+</body>
+</html>

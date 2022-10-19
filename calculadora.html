@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        #calculator{
+            background-image: linear-gradient(#b7b7b7, #9c9c9c);
+            display: grid;
+            border-radius: 10px;
+            padding: 15px;
+            width: 200px;
+            grid-template-columns: repeat(4, [col-start] 1fr [col-end]);
+            grid-template-rows: auto repeat(5, 40px);
+            grid-gap: 7px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .8);
+            margin: 15px auto;
+        }
+
+        #display{
+            grid-column: col-start / 4 col-end;
+            background-image: linear-gradient(rgb(176, 176, 176), rgb(210, 210, 210));
+            text-align: right;
+            font-size: 2.5em;
+            font-family: sans-serif;
+            padding-right: 15px;
+            padding-top: 10px;
+            border-top: 3px solid white;
+            border-left: 3px solid white;
+            margin-bottom: 15px;
+        }
+
+        .zero{
+            background-color: rgb(175, 175, 175);
+            grid-column: col-start / 2 col-end; 
+            border-left: 3px outset lightgrey;
+            border-top: 3px outset lightgrey; 
+        }
+
+        .mais{
+            background-color: rgb(175, 175, 175);
+            grid-row: 5 / 7;
+            grid-column: 4 col-start / 4 col-end;
+            border-left: 3px outset lightgray;
+            border-top: 3px outset lightgray;
+        }
+
+        button{
+            border: none;
+            font-size: 1.2em;
+            font-family: sans-serif;
+            background-color: #e8e6e6;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="calculator">
+        <div id="display">0</div>
+        <button>AC</button> <button>%</button> <button>X</button> <button>/</button>
+        <button>7</button> <button>8</button> <button>9</button> <button>=</button>
+        <button>4</button> <button>5</button> <button>6</button> <button>-</button>
+        <button>1</button> <button>2</button> <button>3</button> 
+        <button class="zero">0</button> <button>,</button> <button class="mais">+</button>  
+    </div>
+</body>
+</html>

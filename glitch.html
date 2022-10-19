@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tilt{
+            text-align: center;
+            font-size: 3em;
+        }
+
+        .h1:hover{
+            animation: glitch .25s;
+        }
+
+        @keyframes glitch {
+            0%{
+                transform: translateX(0);
+                text-shadow: 
+                0.1em 0 0 #0227f5,
+                -0,05em 0 0 #4affff,
+                -0.1em 0 0 #ff0825,
+                -0.2em 0 0 #fffb19;
+            }
+
+            20%{
+                transform: translateX(-0.1em);
+                text-shadow: 
+                -0.1em 0 0 #0227f5,
+                0.1em 0 0 #4affff,
+                -0.05em 0 0 #ff0825,
+                0.2em 0 0 #fffb19;
+            }
+
+            40%{
+                transform: translateX(0.05em);
+                text-shadow: 
+                -.05em 0 0 #0227f5,
+                0.2em 0 0 #4affff,
+                0.5em 0 0 #ff0825,
+                -.1em 0 0 #fffb19;
+            }
+
+            60%{
+                transform: translateX(-0.1em);
+                text-shadow: 
+                0.2em 0 0 #0227f5,
+                0.05cm 0 0 #4affff,
+                -.5em 0 0 #ff0825,
+                .2em 0 0 #fffb19;
+            }
+
+            80%{
+                transform: translateX(0.05em);
+                text-shadow: 
+                .14em 0 0 #0227f5,
+                -0.2em 0 0 #4affff,
+                0.2em 0 0 #ff0825,
+                1em 0 0 #fffb19;
+            }
+            
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="tilt">
+        <h1 class="h1">SPLIT</h1>
+    </div>
+    
+</body>
+</html>

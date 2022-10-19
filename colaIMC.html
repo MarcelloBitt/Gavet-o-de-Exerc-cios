@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pr-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Calculo IMC</title>
+</head>
+ 
+ 
+<body>
+ 
+  
+  <label>Peso</label>
+  <input type="number" id="um" step="0.1">
+  <label>Altura</label>
+  <input type="number" id="dois" step="0.1">
+ 
+  <button id="botao">Me Aperte</button>
+ 
+  <p id="imc"></p>
+  <p id="indice"></p>
+ 
+<script>
+  
+(function(){
+ 
+  'use strict'
+ 
+  document.querySelector("#botao").addEventListener("click", mostrarIMC)
+  
+   
+ 
+  function mostrarIMC(){
+    document.querySelector("#imc").innerHTML=(calIMC())
+    document.querySelector("#indice").innerHTML = (indiceIMC());
+  }
+ 
+  function indiceIMC(){
+ 
+    try{
+      if (calIMC() < 16){
+        var msg = "Muito abaixo do peso";
+        return msg
+      } else if (calIMC() >= 16 && calIMC() <= 16.9){
+        var msg = "Muito abaixo do peso";
+        return msg
+      } else if(calIMC() >= 17 && calIMC() <= 18.4){
+        var msg = "Abaixo do peso";
+        return msg
+      } else if (calIMC() >= 18.5 && calIMC() <= 24.9){
+        var msg = "Peso normal";
+        return msg
+      } else if(calIMC() >= 25 && calIMC() <= 29.9){
+        var msg = "Acima do peso";
+        return msg
+      } else if(calIMC() >= 30 && calIMC() <= 34.9){
+        var msg = "Obesidade Grau I";
+        return msg
+      } else if(calIMC() >= 35 && calIMC() <= 40){
+        var msg = "Obesidade Grau II";
+        return msg
+      } else if(calIMC() > 40){
+        var msg = "Obesidade Grau III";
+        return msg
+      }
+      
+    }catch(err){
+      alert("erro!")
+    }
+    
+  }
+ 
+  function calIMC(){
+    try{
+    var calculo = "";
+ 
+    var peso = document.querySelector("#um").value;
+    var altura = document.querySelector("#dois").value;
+ 
+    var cal = peso / (altura * altura);
+ 
+    calculo += cal;
+ 
+    return calculo
+ 
+    }catch(err){
+      alert("erro!")
+    }
+  }
+ 
+})()
+ 
+</script>
+ 
+ 
+</body>
+</html>
